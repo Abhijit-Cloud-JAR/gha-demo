@@ -2,7 +2,7 @@ name: Context variables Demo
 on: push
 jobs:
     context-demo:
-        runs-on: ubutu-latest
+        runs-on: ubuntu-latest
         steps:
             - name: Use Context-variable
               run: |
