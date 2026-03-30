@@ -1,0 +1,10 @@
+name: ENV Demo
+on: workflow_dispatch
+env:
+  APP_ENV: "DEV"
+jobs:
+  env_demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the Environment
+        run: echo "App is connected to $APP_ENV"
