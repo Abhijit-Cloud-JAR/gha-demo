@@ -9,4 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check the Environment
+        env:
+          APP_ENV: "TEST"
         run: echo "App is connected to $APP_ENV"
