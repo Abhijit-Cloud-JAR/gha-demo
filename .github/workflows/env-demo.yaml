@@ -10,5 +10,5 @@ jobs:
     steps:
       - name: Check the Environment
         env:
-          APP_ENV: "TEST"
+          APP_ENV: "prod"
         run: echo "App is connected to $APP_ENV"
