@@ -1,1 +1,82 @@
-<h2>Welcome to Github Actions </h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Push Pull Button</title>
+    <style>
+        /* Center the button on the page */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Button basic styling */
+        .btn {
+            position: relative;
+            width: 200px;
+            height: 60px;
+            background-color: #3498db; /* Blue color */
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            overflow: hidden; /* Ensures the animation stays inside the button */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover effect for background */
+        .btn:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+        }
+
+        /* Styling for the text layers (Default and Hover) */
+        .btn span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            letter-spacing: 2px;
+            transition: all 0.4s ease;
+        }
+
+        /* Specific styles for the "PUSH" text */
+        .push-text {
+            opacity: 1;
+        }
+
+        /* Specific styles for the "PULL" text */
+        .pull-text {
+            opacity: 0;
+            top: 80%; /* Start slightly lower */
+        }
+
+        /* Animation Logic when hovering */
+        .btn:hover .push-text {
+            opacity: 0;
+            top: 20%; /* Float up */
+        }
+
+        .btn:hover .pull-text {
+            opacity: 1;
+            top: 50%; /* Move to center */
+        }
+    </style>
+</head>
+<body>
+
+    <button class="btn">
+        <span class="push-text">PUSH</span>
+        <span class="pull-text">PULL</span>
+    </button>
+
+</body>
+</html>
