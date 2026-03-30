@@ -1,0 +1,22 @@
+name: Inputs Demo
+on:
+    workflow_dispatch:
+        inputs:
+            environment:
+                description: Choose the environment to deploy
+                required: true
+                default: dev
+                type: choice
+                options:
+                    - dev
+                    - test
+                    - prod
+            artifact_tags:
+                description: Choose the git tag to display
+                required: true        
+jobs:
+    input_demo:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Input Check
+              run: echo "Application id ${{ inputs.artifact_tags }} is deployed successfully on ${{ inputs.environment }} "
