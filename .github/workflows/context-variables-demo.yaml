@@ -1,0 +1,17 @@
+name: Context variables Demo
+on: push
+jobs:
+    context-demo:
+        runs-on: ubutu-latest
+        steps:
+            - name: Use Context-variable
+              run: |
+                echo "this workflow is triggered by ${{github.actor}}"
+                echo "this repository name is ${{github.repository}}"
+                echo "this branch is ${{github.ref_name}}"
+
+            - name: Print all variables under Github 
+              run: echo "${{ toJson(github)}}"
+
+            - name: Print environment variables
+              run: echo "$GITHUB_SHA"
