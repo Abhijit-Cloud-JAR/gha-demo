@@ -1,9 +1,11 @@
 name: ENV Demo
-on: workflow_dispatch
+on: push
 env:
   APP_ENV: "DEV"
 jobs:
   env_demo:
+    env:
+      APP_ENV: "TEST"
     runs-on: ubuntu-latest
     steps:
       - name: Check the Environment
