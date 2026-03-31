@@ -26,14 +26,14 @@ jobs:
               run: echo "Deploying the code to Production environment"
     success_notify:
         needs: ['quality_check','Dev_Deploy','Prod_Deploy']
-        if: success()
+        if: always() && !failure()
         runs-on: ubuntu-latest
         steps:
             - name: Success Notification
               run: echo "Success email is sent to the mail"
     failure_notify:
         needs: ['quality_check','Dev_Deploy','Prod_Deploy']
-        if: success()
+        if: failure()
         runs-on: ubuntu-latest
         steps:
             - name: Failure Notification
